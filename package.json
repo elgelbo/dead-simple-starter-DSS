@@ -1,0 +1,17 @@
+{
+  "name": "parcel-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html src/test.js --out-dir public/js -p 7777 --open",
+    "build": "parcel build src/index.html src/test.js --out-dir public/js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.10.3"
+  }
+}
