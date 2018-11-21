@@ -4,10 +4,10 @@
   "description": "",
   "main": "start.js",
   "scripts": {
-    "dev": "concurrently \"npm:build\" \"npm:start\"",
+    "dev": "npm run build & npm run start",
     "start": "node start",
     "watch": "parcel watch ./src/scripts/test.js -d public",
-    "build": "parcel build ./src/scripts/test.js -d public"
+    "build": "parcel build ./src/scripts/test.js -d public/js --experimental-scope-hoisting"
   },
   "keywords": [],
   "author": "",
@@ -18,7 +18,6 @@
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
-    "parcel-bundler": "^1.10.3",
-    "parcel-plugin-ejs": "^0.2.0"
+    "parcel-bundler": "^1.10.3"
   }
 }
