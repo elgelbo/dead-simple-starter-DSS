@@ -2,10 +2,12 @@
   "name": "parcel-example",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "start.js",
   "scripts": {
-    "dev": "concurrently \"parcel build src/scripts/test.js --out-dir public/js --no-source-maps\" \"node start\"",
-    "build": "parcel build src/scripts/test.js --out-dir public/js --no-source-maps"
+    "dev": "concurrently \"npm:build\" \"npm:start\"",
+    "start": "node start",
+    "watch": "parcel watch ./src/scripts/test.js -d public",
+    "build": "parcel build ./src/scripts/test.js -d public"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +18,7 @@
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
-    "parcel-bundler": "^1.10.3"
+    "parcel-bundler": "^1.10.3",
+    "parcel-plugin-ejs": "^0.2.0"
   }
 }
