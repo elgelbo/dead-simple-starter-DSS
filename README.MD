@@ -1,5 +1,3 @@
-# Dead-Simple App
+# Dead Simple Starter
 
-A dead-simple nodejs app built with express (server/routing), parceljs (modeule bundling), ejs (express template engine). Pretty dang easy.
-
-## NO DB (YET)
+A dead-simple nodejs app built with express (server/routing), parceljs (modeule bundling), pug (express template engine), and mongoose (db). Pretty dang easy.
