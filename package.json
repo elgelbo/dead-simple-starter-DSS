@@ -7,17 +7,17 @@
     "dev": "npm run build & npm run start",
     "start": "node start",
     "watch": "parcel watch ./src/scripts/test.js -d public",
-    "build": "parcel build ./src/scripts/test.js -d public/js --experimental-scope-hoisting"
+    "build": "parcel build ./src/scripts/test.js -d public/js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ejs": "^2.6.1",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "mongoose": "^5.4.19",
+    "pug": "^2.0.3"
   },
   "devDependencies": {
-    "concurrently": "^4.1.0",
-    "parcel-bundler": "^1.10.3"
+    "parcel-bundler": "^1.12.2"
   }
 }

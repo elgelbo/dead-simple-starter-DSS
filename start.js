@@ -1,10 +1,12 @@
+const mongoose = require('mongoose');
 require('dotenv').config();
 // IMPORT MONGOOSE
 
-// DB SETUP GOES HERE
-// 1. CONNECTION
-// 2. HANDLE ERRORS
-// 3. IMPORT MODELS
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, promiseLibrary: global.Promise}).then(
+  () => { console.log('🔗 👌 🔗 👌 🔗 👌 🔗 👌 Mongoose connection open.') },
+  err => { console.error(`🙅 🚫 🙅 🚫 🙅 🚫 🙅 🚫 → ${err.message}`) }
+);
+// IMPORT MODELS
 
 // START APP
 const app = require('./app')
