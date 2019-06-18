@@ -4,20 +4,23 @@
   "description": "",
   "main": "start.js",
   "scripts": {
-    "dev": "npm run build & npm run start",
+    "dev": "concurrently \"npm:watch\" \"npm:build-watch\"",
     "start": "node start",
-    "watch": "parcel watch ./src/scripts/test.js -d public",
+    "watch": "nodemon --ignore src/ --ignore public/ start",
+    "build-watch": "parcel watch ./src/scripts/test.js -d public",
     "build": "parcel build ./src/scripts/test.js -d public/js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
-    "mongoose": "^5.4.19",
-    "pug": "^2.0.3"
+    "express": "^4.17.1",
+    "mongoose": "^5.6.0",
+    "pug": "^2.0.4"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.2"
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.19.1",
+    "parcel-bundler": "^1.12.3"
   }
 }
