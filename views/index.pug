@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <h1>YO YO YO</h1>
-  <script src="main.js"></script>
-</body>
-</html>
+extends layout
+
+block content
+  .inner
+    h2= title
+    form(action="/form", method="post")
+      .form-item
+        label(for="name") Enter your name
+        input(type="text" name="name" id="name" required)
+      .form-item
+        input(type="submit", value="Subscribe")
