@@ -2,8 +2,16 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 // IMPORT MONGOOSE
 
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, promiseLibrary: global.Promise}).then(
-  () => { console.log('🔗 👌 🔗 👌 🔗 👌 🔗 👌 Mongoose connection open.') },
+// DIFFERENTIATE BETWEEN PROD AND DEV DBs
+let mongooseString;
+if (process.env.NODE_ENV === 'development') {
+  mongooseString = process.env.MONGOLAB_AMBER_URI;
+} else {
+  mongooseString = process.env.MONGODB_URI;
+}
+
+mongoose.connect(mongooseString, { useNewUrlParser: true, promiseLibrary: global.Promise}).then(
+  () => { console.log(`🔗 👌 🔗 👌 🔗 👌 🔗 👌 Mongoose connection open on: ${mongooseString}.`) },
   err => { console.error(`🙅 🚫 🙅 🚫 🙅 🚫 🙅 🚫 → ${err.message}`) }
 );
 // IMPORT MODELS
