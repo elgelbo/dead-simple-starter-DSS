@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const routes = require('./routes/index');
+const catchErr = require('./handlers/catchErr');
 app.set('views', path.join(__dirname, 'views')); // this is the folder for ejs files
 app.set('view engine', 'pug');
 
@@ -9,5 +10,8 @@ app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use(catchErr.notFound);
+app.use(catchErr.productionErrors)
+
 
 module.exports = app;
